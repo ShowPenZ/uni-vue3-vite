@@ -1,14 +1,15 @@
 const env = import.meta.env;
-const { VITE_BASE_URL } = env;
+const { VITE_BASE_URL, VITE_MAP_CHOOSELOCATION_KEY, VITE_MAP_REFER, VITE_IMAGE_URL } = env;
 
 export const CONST_URL = {
   BASE_URL: VITE_BASE_URL,
-  VERSIONAPI: "/api",
-  SERVERCODE: "structure-platform-backend",
-  CONTROLLER1: "/iot-user-center",
-  CONTROLLER2: "/structure-platform-backend",
+  IMG_URL: VITE_IMAGE_URL,
+  IMG_PATH: "/mp-wx-ff-cloud",
+  VERSIONAPI: "/ffc/rest/v1",
+  CONTROLLER1: "/tenant/app",
+  CONTROLLER2: "/account-auth",
+  CONTROLLER3: "/tenant-sys-user",
 };
 
-export const CONST_IMGURL = {
-  IMG_PATH: "structure-platform-frontend-static/wechat-mini/assets",
-};
+export const MAP_CHOOSELOCATION_KEY = VITE_MAP_CHOOSELOCATION_KEY;
+export const MAP_REFER = VITE_MAP_REFER;
