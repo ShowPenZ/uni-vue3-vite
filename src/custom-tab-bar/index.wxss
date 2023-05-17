@@ -1,0 +1,91 @@
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  display: flex;
+  line-height: 1.2;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: white;
+
+}
+
+.tab-bar-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tab-bar-item .image {
+  width: 23px;
+  height: 27px;
+}
+
+.bulge {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%);
+  top: -25px;
+  height: 80px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.bulge .background{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bulge .background .image{
+  width: 45px;
+  height: 45px;
+}
+
+.tab-bar-item .tab-bar-view {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.barBg {
+  position:absolute;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background:url('http://forfaith.oss-cn-beijing.aliyuncs.com/mp-wx-ff-cloud/static/images/bottom1.png') no-repeat;
+  background-size: cover;
+  z-index: 999;
+}
+
+.addDetail {
+  position: relative;
+  width: 100%;
+}
+
+.plus1 {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -38px;
+  left: -24%;
+  transform: translate(-24%);
+}
+
+.scan1 {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -38px;
+  left: 45%;
+  transform: translate(45%);
+}
