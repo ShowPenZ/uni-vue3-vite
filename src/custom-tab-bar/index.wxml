@@ -7,12 +7,15 @@
       {{item.text}}
     </view>
   </view>
-  <view class="bulge" bindtap="toadd">
+  <view class="bulge" bindtap="HandleToShow">
     <view class="background">
       <image class="image" src="/static/images/plus.png"></image>
     </view>
-    <image wx:if="{{isShow}}" class="plus1" src="/static/images/plus1.png" alt="" bindtap="toAddDevice"></image>
-    <image wx:if="{{isShow}}" class="scan1" src="/static/images/scan1.png" alt="" bindtap="toScan"></image>
   </view>
   <view class="barBg" />
+  <view class="floatContent" wx:if="{{isShow}}">
+    <image class="plus1" src="/static/images/plus1.png" alt="" bindtap="handleToAdd"></image>
+    <image class="scan1" src="/static/images/scan1.png" alt="" bindtap="HandleToScan"></image>
+  </view>
+  <view class="mask" wx:if="{{isShow}}" bindtap="handleClickMask"/>
 </view>

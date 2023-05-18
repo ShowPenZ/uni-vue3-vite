@@ -19,5 +19,7 @@
 
 
 
+
 *.config.js
 /src/manifest.json
+/src/custom-tab-bar

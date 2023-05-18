@@ -1,7 +1,5 @@
 <template>
-  <!-- <view class="login" :style="{ backgroundImage: `url(${CONST_URL.BASE_URL}/${CONST_IMGURL.IMG_PATH}/login/bg.png)` }"> -->
-    <view class="login">
-
+  <view class="login">
     <view class="loginTopArea">
       <text class="loginTitle">登录demo</text>
     </view>
@@ -35,12 +33,16 @@
 import { onLoad, onReady } from "@dcloudio/uni-app";
 
 import { reactive, ref, toRefs } from "vue";
-import { setToken, setRefreshToken, setCipherAccount, getCipherAccount } from "@/utils/store";
+import {
+  //   setToken, setRefreshToken,
+  setCipherAccount,
+  getCipherAccount,
+} from "@/utils/store";
 import { ciphertext, isObjEmpty, sleep } from "@/utils/utils";
 
-import { CONST_URL, CONST_IMGURL } from "@/config/constant";
+import { CONST_URL } from "@/config/constant";
 // import { valid_10 } from "@/utils/validate";
-import { login } from "@/services/login";
+// import { login } from "@/services/login";
 // import { useSystem } from "@/store/system";
 // import { storeToRefs } from "pinia";
 import { useUserInfo } from "@/store/user";
@@ -120,16 +122,18 @@ export default {
 
     const handleSubmit = async (formData) => {
       state.isLoading = true;
-      const res = await login(formData)
-        .then()
-        .catch((e) => {
-          console.log(e);
-          state.isLoading = false;
-        });
+      // const res = await login(formData)
+      //   .then()
+      //   .catch((e) => {
+      //     console.log(e);
+      //     state.isLoading = false;
+      //   });
+
+      const res = { code: 200, message: "登录成功" };
 
       if (res && res.code === 200) {
-        setToken(res.data.accessToken);
-        setRefreshToken(res.data.refreshToken);
+        // setToken(res.data.accessToken);
+        // setRefreshToken(res.data.refreshToken);
         if (state.isCheck) {
           console.log(formData);
           holdAccountInfo(formData);
@@ -162,7 +166,6 @@ export default {
     return {
       ...toRefs(state),
       CONST_URL,
-      CONST_IMGURL,
       ruleLoginForm,
       formData,
       ...toRefs(inputType),
