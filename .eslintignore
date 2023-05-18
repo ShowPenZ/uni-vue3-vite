@@ -1,0 +1,25 @@
+/config
+
+# dependencies
+/node_modules
+
+# production
+/dist
+/public
+/build
+
+# misc
+.DS_Store
+
+# ide
+.idea
+.vscode
+.history
+
+
+
+
+
+*.config.js
+/src/manifest.json
+/src/custom-tab-bar
