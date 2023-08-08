@@ -7,7 +7,6 @@ export default {
   onLaunch: function () {
     console.log("App Launch");
     const refreshTokenInfo = getRefreshToken();
-    console.log(isObjEmpty(refreshTokenInfo));
     if (isObjEmpty(refreshTokenInfo)) {
       uni.reLaunch({ url: "/pages/login/index" });
     }

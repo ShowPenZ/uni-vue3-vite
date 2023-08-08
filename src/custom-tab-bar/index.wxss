@@ -61,7 +61,7 @@
   left: 0;
   width: 100%;
   height: 30px;
-  background: url("http://forfaith.oss-cn-beijing.aliyuncs.com/mp-wx-ff-cloud/static/images/bottom1.png") no-repeat;
+  background:url('http://ffcloud-test-fe.oss-cn-hangzhou.aliyuncs.com/mp-wx-ff-cloud/static/images/bottom1.png') no-repeat;
   background-size: cover;
   z-index: 999;
 }
