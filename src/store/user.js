@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
+import { store } from "@/store";
 
 import {
   getUserInfo,
@@ -14,7 +15,7 @@ import {
   setUserParam,
 } from "@/utils/store";
 
-const useUserInfo = defineStore("user", () => {
+export const useUserInfo = defineStore("user", () => {
   const userInfo = ref({});
   const mainBarState = ref(0);
 
@@ -53,4 +54,7 @@ const useUserInfo = defineStore("user", () => {
     // resetPassWord,
   };
 });
-export { useUserInfo };
+
+export function useUserStoreHook() {
+  return useUserInfo(store);
+}

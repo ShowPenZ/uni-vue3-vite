@@ -1,7 +1,7 @@
 <template>
   <view class="login">
     <view class="loginTopArea">
-      <text class="loginTitle">登录demo</text>
+      <text class="loginTitle">登录demo111</text>
     </view>
     <uni-forms class="loginForm" :model="formData" ref="ruleLoginForm" validate-trigger="bind">
       <uni-forms-item
@@ -30,29 +30,25 @@
 </template>
 
 <script>
+import { reactive, ref, toRefs } from "vue";
 import { onLoad, onReady } from "@dcloudio/uni-app";
 
-import { reactive, ref, toRefs } from "vue";
 import {
   //   setToken, setRefreshToken,
   setCipherAccount,
   getCipherAccount,
+  setRefreshToken,
 } from "@/utils/store";
 import { ciphertext, isObjEmpty, sleep } from "@/utils/utils";
-
 import { CONST_URL } from "@/config/constant";
-// import { valid_10 } from "@/utils/validate";
-// import { login } from "@/services/login";
-// import { useSystem } from "@/store/system";
-// import { storeToRefs } from "pinia";
-import { useUserInfo } from "@/store/user";
+// import { useUserInfo } from "@/store/user";
 
 export default {
   name: "login-page",
   components: {},
   setup() {
     // const styles = useCssModule();
-    const use_userInfo = useUserInfo();
+    // const use_userInfo = useUserInfo();
     const ruleLoginForm = ref(null);
     const state = reactive({
       isLoading: false,
@@ -131,6 +127,7 @@ export default {
 
       const res = { code: 200, message: "登录成功" };
 
+      console.log(res);
       if (res && res.code === 200) {
         // setToken(res.data.accessToken);
         // setRefreshToken(res.data.refreshToken);
@@ -141,16 +138,16 @@ export default {
           setCipherAccount({});
         }
         state.isLoading = false;
-
+        setRefreshToken("123");
         // 登录成功跳转
         uni.showToast({ title: res.message, icon: "", duration: 1000 });
         sleep(1002).then(async () => {
           uni.reLaunch({ url: "/pages/index/index" });
-          try {
-            await use_userInfo.getUserParams();
-          } catch (error) {
-            console.log(error);
-          }
+          // try {
+          //   await use_userInfo.getUserParams();
+          // } catch (error) {
+          //   console.log(error);
+          // }
         });
       }
     };
